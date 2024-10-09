@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Complex Example</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #modal:target {
+            display: flex;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl font-bold text-center mb-6">Tailwind CSS Complex Example</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h2 class="text-2xl font-semibold mb-4">Card Title</h2>
+                <p class="text-gray-700 mb-4">This is a simple card component using Tailwind CSS. You can add more content here.</p>
+                <a href="#modal" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Learn More</a>
+            </div>
+
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
+                <form>
+                    <div class="mb-4">
+                        <label class="block text-gray-700" for="name">Name</label>
+                        <input type="text" id="name" class="border rounded-lg w-full py-2 px-3" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700" for="email">Email</label>
+                        <input type="email" id="email" class="border rounded-lg w-full py-2 px-3" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700" for="message">Message</label>
+                        <textarea id="message" class="border rounded-lg w-full py-2 px-3" rows="4" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="modal" class="fixed inset-0 flex items-center justify-center hidden bg-gray-800 bg-opacity-50">
+            <div class="bg-white rounded-lg p-6">
+                <h2 class="text-lg font-semibold">Modal Title</h2>
+                <p>This is the content of the modal.</p>
+                <a href="#" class="mt-4 bg-red-500 text-white px-4 py-2 rounded">Close</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
