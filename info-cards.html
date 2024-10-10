@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Info Cards</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .info-card {
+            display: none; /* Hide all cards by default */
+        }
+        .info-card.active {
+            display: block; /* Show the active card */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-6">
+
+    <!-- Info Card for Ivan Petrov -->
+    <div id="ivan" class="info-card active">
+        <h2 class="text-lg font-semibold">Ivan Petrov - Software Engineer</h2>
+        <p><strong>Department:</strong> IT</p>
+        <p><strong>Email:</strong> ivan.petrov@sinksrus.com</p>
+        <p><strong>Contact No:</strong> 555-6789</p>
+        <p><strong>Address:</strong> 12 Red Square, Moscow</p>
+        <p><strong>Sex:</strong> Male</p>
+        <p><strong>Marital Status:</strong> Single</p>
+        <button onclick="goBack()" class="mt-2 bg-red-500 text-white px-4 py-2 rounded">Back to Employee List</button>
+    </div>
+
+    <!-- Info Card for Pedro Los Baños -->
+    <div id="pedro" class="info-card">
+        <h2 class="text-lg font-semibold">Pedro Los Baños - Marketing Manager</h2>
+        <p><strong>Department:</strong> Marketing</p>
+        <p><strong>Email:</strong> pedro_los_banos@sinksrus.com</p>
+        <p><strong>Contact No:</strong> (Not Provided)</p>
+        <p><strong>Address:</strong> 123 Mabini St.</p>
+        <p><strong>Sex:</strong> Male</p>
+        <p><strong>Marital Status:</strong> Married</p>
+        <button onclick="goBack()" class="mt-2 bg-red-500 text-white px-4 py-2 rounded">Back to Employee List</button>
+    </div>
+
+    <!-- Info Card for Ana Gómez -->
+    <div id="ana" class="info-card">
+        <h2 class="text-lg font-semibold">Ana Gómez - HR Specialist</h2>
+        <p><strong>Department:</strong> HR</p>
+        <p><strong>Email:</strong> ana.gomez@sinksrus.com</p>
+        <p><strong>Contact No:</strong> (Not Provided)</p>
+        <p><strong>Address:</strong> (Not Provided)</p>
+        <p><strong>Sex:</strong> Female</p>
+        <p><strong>Marital Status:</strong> Divorced</p>
+        <button onclick="goBack()" class="mt-2 bg-red-500 text-white px-4 py-2 rounded">Back to Employee List</button>
+    </div>
+
+    <!-- Info Card for John Wu -->
+    <div id="john" class="info-card">
+        <h2 class="text-lg font-semibold">John Wu - Sales Associate</h2>
+        <p><strong>Department:</strong> Sales</p>
+        <p><strong>Email:</strong> john.wu@sinksrus.com</p>
+        <p><strong>Contact No:</strong> 555-1234</p>
+        <p><strong>Address:</strong> 789 Pine St.</p>
+        <p><strong>Sex:</strong> Male</p>
+        <p><strong>Marital Status:</strong> Married</p>
+        <button onclick="goBack()" class="mt-2 bg-red-500 text-white px-4 py-2 rounded">Back to Employee List</button>
+    </div>
+
+    <!-- Info Card for Emma Wilson -->
+    <div id="emma" class="info-card">
+        <h2 class="text-lg font-semibold">Emma Wilson - CEO</h2>
+        <p><strong>Department:</strong> Admin</p>
+        <p><strong>Email:</strong> emma@sinksrus.com</p>
+        <p><strong>Contact No:</strong> 555-9999</p>
+        <p><strong>Address:</strong> 101 Main St.</p>
+        <p><strong>Sex:</strong> Female</p>
+        <p><strong>Marital Status:</strong> Married</p>
+        <button onclick="goBack()" class="mt-2 bg-red-500 text-white px-4 py-2 rounded">Back to Employee List</button>
+    </div>
+
+    <script>
+        // Show the info card based on the hash
+        function showInfoCard() {
+            const hash = window.location.hash.substring(1); // Remove the '#' from the hash
+            const cards = document.querySelectorAll('.info-card');
+            cards.forEach(card => {
+                card.classList.remove('active'); // Hide all cards
+                if (card.id === hash) {
+                    card.classList.add('active'); // Show the active card
+                }
+            });
+        }
+
+        // Go back to employee list
+        function goBack() {
+            window.location.href = 'index.html'; // Navigate back to the main page
+        }
+
+        // Execute on page load
+        document.addEventListener("DOMContentLoaded", showInfoCard);
+    </script>
+</body>
+</html>
